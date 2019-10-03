@@ -1,0 +1,250 @@
+Modifier :
+public class SecondActivity  extends AppCompatActivity {
+    private int mCount = 03;
+    private TextView mShowCount; 
+
+public class MainActivity extends AppCompatActivity {
+    private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.d1041161003_tugastoastactiv.extra.MESSAGE";
+    private EditText mMessageEditText;
+    public static final int TEXT_REQUEST = 1;
+
+public class MainActivity extends AppCompatActivity {
+    private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.twoactivities.extra.MESSAGE";
+    private EditText mMessageEditText;
+    public static final int TEXT_REQUEST = 1;
+    private TextView mReplyHeadTextView;
+    private TextView mReplyTextView;
+
+Method :
+public void onActivityResult(int requestCode,
+                                 int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                String reply = data.getStringExtra(SecondActivity.EXTRA_REPLY);
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                mReplyTextView.setText(reply);
+                mReplyTextView.setVisibility(View.VISIBLE);
+
+            }
+        }
+    }
+
+public void launchSecondActivity(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, SecondActivity.class);
+        String message = mMessageEditText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
+
+public void countUp(View view) {
+        mCount++ ;
+        if (mShowCount != null)
+            mShowCount.setText(Integer.toString(mCount));
+    }
+
+public void countDown(View view) {
+        mCount-- ;
+        if (mShowCount != null)
+            mShowCount.setText(Integer.toString(mCount));
+    }
+
+
+Class :
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
+
+public class MainActivity extends AppCompatActivity {
+    private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
+
+
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.twoactivities.extra.MESSAGE";
+
+    private EditText mMessageEditText;
+
+    public static final int TEXT_REQUEST = 1;
+
+    private TextView mReplyHeadTextView;
+    private TextView mReplyTextView;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mMessageEditText = findViewById(R.id.editText_main);
+        mReplyHeadTextView = findViewById(R.id.text_header_reply);
+        mReplyTextView = findViewById(R.id.text_message_reply);
+    }
+
+    public void launchSecondActivity(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, SecondActivity.class);
+        String message = mMessageEditText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(intent, TEXT_REQUEST);
+
+
+
+    }
+    @Override
+    public void onActivityResult(int requestCode,
+                                 int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                String reply = data.getStringExtra(SecondActivity.EXTRA_REPLY);
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                mReplyTextView.setText(reply);
+                mReplyTextView.setVisibility(View.VISIBLE);
+
+            }
+        }
+    }
+}
+
+public class SecondActivity  extends AppCompatActivity {
+    private int mCount = 03;
+    private TextView mShowCount;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+        mShowCount = findViewById(R.id.show_count);
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        TextView textView = findViewById(R.id.text_nama);
+        textView.setText("Hallo " + message);
+    }
+
+    public void countUp(View view) {
+        mCount++ ;
+        if (mShowCount != null)
+            mShowCount.setText(Integer.toString(mCount));
+    }
+
+    public void countDown(View view) {
+        mCount-- ;
+        if (mShowCount != null)
+            mShowCount.setText(Integer.toString(mCount));
+    }
+
+}
+
+Function
+public void onActivityResult(int requestCode,
+                                 int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                String reply = data.getStringExtra(SecondActivity.EXTRA_REPLY);
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                mReplyTextView.setText(reply);
+                mReplyTextView.setVisibility(View.VISIBLE);
+
+            }
+        }
+    }
+
+public void countUp(View view) {
+        mCount++ ;
+        if (mShowCount != null)
+            mShowCount.setText(Integer.toString(mCount));
+    }
+
+public void countDown(View view) {
+        mCount-- ;
+        if (mShowCount != null)
+            mShowCount.setText(Integer.toString(mCount));
+    }
+
+
+
+Constructor
+String message = mMessageEditText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(intent, TEXT_REQUEST);
+
+TextView textView = findViewById(R.id.text_nama);
+        textView.setText("Hallo " + message);
+
+
+Polimorfisme
+String reply = mReply.getText().toString();
+        Intent replyIntent = new Intent();
+
+Intent intent = new Intent(this, SecondActivity.class);
+
+Message message = new Message(this, SecondActivity.class);
+
+
+Inheritance
+public class MainActivity extends AppCompatActivity {
+    private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.d1041161003_tugastoastactiv.extra.MESSAGE";
+    private EditText mMessageEditText;
+    public static final int TEXT_REQUEST = 1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mMessageEditText = findViewById(R.id.edit_nama);
+    }
+    public void launchSecondActivity(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, SecondActivity.class);
+        String message = mMessageEditText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
+}
+
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
+
+public class SecondActivity extends AppCompatActivity {
+    public static final String EXTRA_REPLY =
+            "com.example.android.twoactivities.extra.REPLY";
+    private EditText mReply;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+        mReply=findViewById(R.id.editText_second);
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        TextView textView = findViewById(R.id.text_message);
+        textView.setText(message);
+    }
+    public void returnReply(View view) {
+        String reply = mReply.getText().toString();
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        finish();
+    }
+}
